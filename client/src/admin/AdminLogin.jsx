@@ -19,63 +19,52 @@ export default function AdminLogin({ onLogin }) {
   };
 
   return (
-    <div className="admin-page">
-      <div className="admin-card">
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.75rem",
-            marginBottom: "1.75rem",
-          }}
-        >
-          <div
-            style={{
-              background: "rgba(34,197,94,0.1)",
-              borderRadius: "10px",
-              padding: "0.625rem",
-              color: "var(--green)",
-            }}
-          >
+    <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center px-6 py-12">
+      <div className="w-full max-w-[480px] rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)] p-10">
+        <div className="mb-7 flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-[0.75rem] bg-[rgba(34,197,94,0.1)] text-[var(--green)]">
             <Icon d={icons.lock} size={22} />
           </div>
           <div>
-            <div className="admin-logo">
-              GSM<span>Fix</span>
+            <div className="text-2xl font-[var(--font-display)] font-black uppercase text-[var(--text)]">
+              GSM<span className="text-[var(--green)]">Fix</span>
             </div>
-            <div className="admin-sub">Panel de administración</div>
+            <div className="text-sm text-[var(--muted)]">Panel de administración</div>
           </div>
         </div>
 
         {err && (
-          <div className="admin-err">Clave incorrecta. Intentá de nuevo.</div>
+          <div className="mb-4 rounded-[0.75rem] border border-[#fca5a5] bg-[rgba(239,68,68,0.1)] px-4 py-3 text-sm text-[#f87171]">
+            Clave incorrecta. Intentá de nuevo.
+          </div>
         )}
 
-        <label className="admin-label" htmlFor="pass">
+        <label className="mb-2 block text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-[var(--muted)]" htmlFor="pass">
           Clave de acceso
         </label>
         <input
           id="pass"
           type="password"
-          className="admin-input"
+          className="mb-4 w-full rounded-[0.75rem] border border-[var(--border)] bg-[var(--bg)] px-4 py-3 text-[var(--text)] outline-none transition duration-200 focus:border-[var(--green)]"
           placeholder="••••••••"
           value={pass}
           onChange={(e) => setPass(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && submit()}
-          style={{ marginBottom: "1rem" }}
           autoFocus
         />
 
         <button
-          className="btn-primary"
+          className="mb-5 inline-flex w-full items-center justify-center gap-2 rounded-[0.75rem] bg-[var(--green)] px-5 py-3 text-sm font-[var(--font-display)] font-extrabold uppercase tracking-[0.05em] text-black transition duration-200 hover:bg-[var(--green-bright)]"
           onClick={submit}
-          style={{ width: "100%", justifyContent: "center" }}
         >
           Ingresar
         </button>
 
-        <div style={{ marginTop: "1.25rem", textAlign: "center" }}>
-          <button className="admin-back" onClick={() => navigate("/")}>
+        <div className="text-center">
+          <button
+            className="text-sm text-[var(--muted)] underline transition hover:text-[var(--green)]"
+            onClick={() => navigate("/")}
+          >
             ← Volver al sitio
           </button>
         </div>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ChevronLeft } from "lucide-react";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Services from "./Services";
@@ -16,9 +15,9 @@ export default function Landing() {
 
   return (
     <>
-      <div>
+      <div className="pt-16">
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <div style={{ paddingTop: 64 }}>
+        <main>
           <Hero />
           <Services />
           <WhyUs />
@@ -27,9 +26,8 @@ export default function Landing() {
           <Reviews />
           <Contact />
           <Footer />
-        </div>
+        </main>
       </div>
-      {/* ── SCROLL TO TOP ── */}
       <ScrollToTop />
     </>
   );

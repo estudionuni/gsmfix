@@ -1,5 +1,4 @@
 import { Award, Shield, Zap, CheckCircle2 } from "lucide-react";
-import { Icon } from "../lib/icons";
 
 export default function WhyUs() {
   const items = [
@@ -26,34 +25,32 @@ export default function WhyUs() {
   ];
 
   return (
-    <section
-      id="nosotros"
-      style={{
-        background: "var(--bg-card)",
-        borderTop: "1px solid var(--border)",
-        borderBottom: "1px solid var(--border)",
-      }}
-    >
-      <div className="section-inner">
-        <div className="section-tag">Por qué elegirnos</div>
-        <h2 className="section-title">
+    <section id="nosotros" className="border-y border-[var(--border)] bg-[var(--bg-card)] px-6 py-20">
+      <div className="mx-auto max-w-[1100px]">
+        <div className="mb-3 inline-flex items-center gap-2 font-[var(--font-display)] text-[0.8rem] font-bold uppercase tracking-[0.15em] text-[var(--green)]">
+          <span className="h-0.5 w-6 rounded-full bg-[var(--green)]" /> Por qué elegirnos
+        </div>
+        <h2 className="mb-3 font-[var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-black uppercase leading-[1.05] text-[var(--text)]">
           Técnicos de verdad,
           <br />
           no improvisados
         </h2>
-        <p className="section-sub">
-          Somos Hernán y equipo — un emprendimiento familiar con historia en el
-          barrio.
+        <p className="mb-12 max-w-[500px] text-base leading-7 text-[var(--muted)]">
+          Somos Hernán y equipo — un emprendimiento familiar con historia en el barrio.
         </p>
-        <div className="why-grid">
+        <div className="grid gap-5 lg:grid-cols-2">
           {items.map((item) => (
-            <div key={item.title} className="why-card">
-              <div className="why-icon">
+            <div key={item.title} className="flex gap-4 rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)] p-7">
+              <div className="mt-1 text-[var(--green)]">
                 <item.IconComponent size={22} />
               </div>
               <div>
-                <div className="why-title">{item.title}</div>
-                <div className="why-text">{item.text}</div>
+                <div className="mb-2 text-lg font-[var(--font-display)] font-black uppercase text-[var(--text)]">
+                  {item.title}
+                </div>
+                <div className="text-sm leading-7 text-[var(--muted)]">
+                  {item.text}
+                </div>
               </div>
             </div>
           ))}

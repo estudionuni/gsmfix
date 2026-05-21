@@ -53,67 +53,51 @@ export default function AdminPanel({ onLogout }) {
   };
 
   return (
-    <div className="admin-panel-wrap">
-      <div className="admin-header">
-        <div>
-          <div className="admin-title">
-            Panel <span>Admin</span>
+    <div className="min-h-screen bg-[var(--bg)] px-6 py-10">
+      <div className="mx-auto max-w-[1100px]">
+        <div className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <div className="text-3xl font-[var(--font-display)] font-black uppercase text-[var(--text)]">
+              Panel <span className="text-[var(--green)]">Admin</span>
+            </div>
+            <div className="mt-2 text-sm text-[var(--muted)]">
+              GSMFix · Gestión de banner promocional
+            </div>
           </div>
-          <div style={{ color: "var(--muted)", fontSize: "0.875rem" }}>
-            GSMFix · Gestión de banner promocional
+
+          <div className="flex flex-wrap gap-3">
+            <button
+              className="inline-flex items-center gap-2 rounded-[0.75rem] border border-[var(--border)] px-4 py-3 text-sm font-semibold text-[var(--muted)] transition hover:border-[#ef4444] hover:text-[#ef4444]"
+              onClick={() => navigate("/")}
+            >
+              ← Ver sitio
+            </button>
+            <button
+              className="inline-flex items-center gap-2 rounded-[0.75rem] border border-[var(--border)] bg-[transparent] px-4 py-3 text-sm font-semibold text-[var(--muted)] transition hover:border-[#ef4444] hover:text-[#ef4444]"
+              onClick={onLogout}
+            >
+              <Icon d={icons.logOut} size={15} /> Salir
+            </button>
           </div>
         </div>
 
-        <div style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
-          <button className="admin-back" onClick={() => navigate("/")}>
-            ← Ver sitio
-          </button>
-          <button className="btn-logout" onClick={onLogout}>
-            <Icon d={icons.logOut} size={15} /> Salir
-          </button>
-        </div>
-      </div>
-
-      <div className="upload-section">
-        <div
-          style={{
-            background: "var(--bg-card)",
-            border: "1px solid var(--border)",
-            borderRadius: "12px",
-            padding: "2rem",
-          }}
-        >
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "1.3rem",
-              fontWeight: 800,
-              textTransform: "uppercase",
-              marginBottom: "0.375rem",
-            }}
-          >
+        <div className="rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)] p-10">
+          <div className="mb-4 text-[1.3rem] font-[var(--font-display)] font-black uppercase tracking-[0.05em] text-[var(--text)]">
             Banner promocional
-          </h2>
-
-          <p
-            style={{
-              color: "var(--muted)",
-              fontSize: "0.875rem",
-              marginBottom: "1.5rem",
-            }}
-          >
+          </div>
+          <p className="mb-6 text-sm text-[var(--muted)]">
             Esta imagen aparece en la sección "Ofertas vigentes" del sitio.
           </p>
-
-          <div className="upload-info">
-            Relación de aspecto requerida:{" "}
-            <strong>16:5 (panorámica horizontal)</strong> — por ejemplo, 1600 ×
-            500 px o 3200 × 1000 px. Podés crear tu banner en Canva con esas
-            medidas.
+          <div className="mb-6 text-sm text-[var(--muted)]">
+            Relación de aspecto requerida: <strong className="text-[var(--text)]">16:5 (panorámica horizontal)</strong> — por ejemplo, 1600 × 500 px o 3200 × 1000 px. Podés crear tu banner en Canva con esas medidas.
           </div>
 
           <div
-            className={`dropzone${drag ? " drag" : ""}`}
+            className={`relative flex min-h-[220px] cursor-pointer items-center justify-center gap-4 overflow-hidden rounded-[1rem] border-2 px-6 py-10 text-[var(--muted)] transition duration-200 ${
+              drag
+                ? "border-[var(--green)] bg-[rgba(34,197,94,0.04)]"
+                : "border-[var(--border)] bg-[var(--bg-card)]"
+            }`}
             onDrop={onDrop}
             onDragOver={onDragOver}
             onDragLeave={onDragLeave}
@@ -130,53 +114,36 @@ export default function AdminPanel({ onLogout }) {
               onChange={(e) => handleFile(e.target.files?.[0])}
             />
             <Icon d={icons.upload} size={36} />
-            <div className="dropzone-label">
+            <div className="text-center text-sm">
               Arrastrá tu banner acá o hacé click para seleccionar
             </div>
           </div>
 
           {preview && (
-            <div className="dropzone-preview">
-              <img src={preview} alt="Vista previa del banner" />
+            <div className="mt-6 overflow-hidden rounded-[1rem] border border-[var(--border)]">
+              <img src={preview} alt="Vista previa del banner" className="h-full w-full object-cover" />
             </div>
           )}
 
-          <div className="upload-actions">
+          <div className="mt-6 flex flex-wrap gap-3">
             {preview && (
-              <button className="btn-secondary" onClick={clear} type="button">
+              <button className="inline-flex items-center gap-2 rounded-[0.75rem] border border-[var(--border)] px-4 py-3 text-sm font-semibold text-[var(--text)] transition duration-200 hover:border-[var(--green)]" onClick={clear} type="button">
                 Limpiar
               </button>
             )}
-
-            <button className="btn-primary" onClick={save} type="button">
+            <button className="inline-flex items-center gap-2 rounded-[0.75rem] bg-[var(--green)] px-4 py-3 text-sm font-[var(--font-display)] font-extrabold uppercase tracking-[0.05em] text-black transition duration-200 hover:bg-[var(--green-bright)]" onClick={save} type="button">
               <Icon d={icons.checkCircle} size={16} /> Publicar banner
             </button>
           </div>
 
           {saved && (
-            <div className="admin-status">
-              <Icon d={icons.checkCircle} size={16} /> Banner publicado
-              correctamente en el sitio.
+            <div className="mt-6 inline-flex items-center gap-2 rounded-[0.75rem] border border-[var(--border-green)] bg-[rgba(34,197,94,0.1)] px-4 py-3 text-sm text-[var(--green)]">
+              <Icon d={icons.checkCircle} size={16} /> Banner publicado correctamente en el sitio.
             </div>
           )}
 
-          <div
-            style={{
-              marginTop: "1.5rem",
-              padding: "1rem",
-              background: "rgba(34,197,94,0.05)",
-              border: "1px solid var(--border-green)",
-              borderRadius: "8px",
-              fontSize: "0.8rem",
-              color: "var(--muted)",
-              lineHeight: "1.7",
-            }}
-          >
-            <strong style={{ color: "var(--green-bright)" }}>Consejo:</strong>{" "}
-            Diseñá el banner en Canva con tamaño 1600 × 500 px. Guardalo como
-            PNG o JPG. Nombralo con palabras clave como{" "}
-            <em>gsmfix-promo-pantalla-agosto.jpg</em> para mejor SEO. La sesión
-            se guarda localmente en este navegador.
+          <div className="mt-6 rounded-[0.75rem] border border-[var(--border-green)] bg-[rgba(34,197,94,0.05)] p-4 text-sm leading-7 text-[var(--muted)]">
+            <strong className="text-[var(--green-bright)]">Consejo:</strong> Diseñá el banner en Canva con tamaño 1600 × 500 px. Guardalo como PNG o JPG. Nombralo con palabras clave como <em>gsmfix-promo-pantalla-agosto.jpg</em> para mejor SEO. La sesión se guarda localmente en este navegador.
           </div>
         </div>
       </div>

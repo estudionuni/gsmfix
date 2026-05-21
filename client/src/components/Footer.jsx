@@ -3,22 +3,14 @@ import { navigate } from "../hooks/useRouter";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="border-t border-[var(--border)] bg-[var(--bg-card)] px-6 py-6 text-center text-sm text-[var(--muted)]">
       <p>
-        © {new Date().getFullYear()} GSMFix · José Hernández 32, Luis Guillón ·
-        Todos los derechos reservados
+        © {new Date().getFullYear()} GSMFix · José Hernández 32, Luis Guillón · Todos los derechos reservados
       </p>
-      <p style={{ marginTop: "0.375rem", fontSize: "0.75rem" }}>
+      <p className="mt-1 text-sm">
         <button
           onClick={() => navigate("/panel")}
-          style={{
-            background: "none",
-            border: "none",
-            color: "var(--muted)",
-            cursor: "pointer",
-            fontSize: "0.75rem",
-            textDecoration: "underline",
-          }}
+          className="text-[var(--muted)] underline transition hover:text-[var(--green)]"
         >
           Panel admin
         </button>
