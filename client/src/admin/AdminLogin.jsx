@@ -29,7 +29,9 @@ export default function AdminLogin({ onLogin }) {
             <div className="text-2xl font-[var(--font-display)] font-black uppercase text-[var(--text)]">
               GSM<span className="text-[var(--green)]">Fix</span>
             </div>
-            <div className="text-sm text-[var(--muted)]">Panel de administración</div>
+            <div className="text-sm text-[var(--muted)]">
+              Panel de administración
+            </div>
           </div>
         </div>
 
@@ -39,7 +41,10 @@ export default function AdminLogin({ onLogin }) {
           </div>
         )}
 
-        <label className="mb-2 block text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-[var(--muted)]" htmlFor="pass">
+        <label
+          className="mb-2 block text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-[var(--muted)]"
+          htmlFor="pass"
+        >
           Clave de acceso
         </label>
         <input

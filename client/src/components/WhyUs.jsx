@@ -25,10 +25,14 @@ export default function WhyUs() {
   ];
 
   return (
-    <section id="nosotros" className="border-y border-[var(--border)] bg-[var(--bg-card)] px-6 py-20">
+    <section
+      id="nosotros"
+      className="border-y border-[var(--border)] bg-[var(--bg-card)] px-6 py-20"
+    >
       <div className="mx-auto max-w-[1100px]">
         <div className="mb-3 inline-flex items-center gap-2 font-[var(--font-display)] text-[0.8rem] font-bold uppercase tracking-[0.15em] text-[var(--green)]">
-          <span className="h-0.5 w-6 rounded-full bg-[var(--green)]" /> Por qué elegirnos
+          <span className="h-0.5 w-6 rounded-full bg-[var(--green)]" /> Por qué
+          elegirnos
         </div>
         <h2 className="mb-3 font-[var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-black uppercase leading-[1.05] text-[var(--text)]">
           Técnicos de verdad,
@@ -36,11 +40,15 @@ export default function WhyUs() {
           no improvisados
         </h2>
         <p className="mb-12 max-w-[500px] text-base leading-7 text-[var(--muted)]">
-          Somos Hernán y equipo — un emprendimiento familiar con historia en el barrio.
+          Somos Hernán y equipo — un emprendimiento familiar con historia en el
+          barrio.
         </p>
         <div className="grid gap-5 lg:grid-cols-2">
           {items.map((item) => (
-            <div key={item.title} className="flex gap-4 rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)] p-7">
+            <div
+              key={item.title}
+              className="flex gap-4 rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)] p-7"
+            >
               <div className="mt-1 text-[var(--green)]">
                 <item.IconComponent size={22} />
               </div>

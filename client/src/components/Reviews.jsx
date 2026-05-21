@@ -18,14 +18,21 @@ export default function Reviews() {
 
         <div className="grid gap-5 lg:grid-cols-3">
           {reviews.map((r, i) => (
-            <article key={i} className="rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)] p-6">
+            <article
+              key={i}
+              className="rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)] p-6"
+            >
               <div className="mb-4 flex gap-1 text-amber-400">
                 {[...Array(5)].map((_, j) => (
                   <Star key={j} size={14} color="#facc15" />
                 ))}
               </div>
-              <p className="mb-4 text-sm leading-7 italic text-[var(--muted)]">"{r.text}"</p>
-              <div className="text-sm font-semibold text-[var(--text)]">{r.author}</div>
+              <p className="mb-4 text-sm leading-7 italic text-[var(--muted)]">
+                "{r.text}"
+              </p>
+              <div className="text-sm font-semibold text-[var(--text)]">
+                {r.author}
+              </div>
               <div className="text-xs text-[var(--muted)]">{r.date}</div>
             </article>
           ))}

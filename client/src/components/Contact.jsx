@@ -52,7 +52,9 @@ export default function Contact() {
                 <div className="mb-1 text-[0.7rem] uppercase tracking-[0.08em] text-[var(--muted)]">
                   WhatsApp
                 </div>
-                <div className="text-sm font-medium text-[var(--text)]">+54 9 11 5325-8828</div>
+                <div className="text-sm font-medium text-[var(--text)]">
+                  +54 9 11 5325-8828
+                </div>
               </div>
             </div>
 

@@ -9,7 +9,8 @@ export default function FAQ() {
     <section id="preguntas" className="bg-[var(--bg)] px-6 py-20">
       <div className="mx-auto max-w-[1100px]">
         <div className="mb-3 inline-flex items-center gap-2 font-[var(--font-display)] text-[0.8rem] font-bold uppercase tracking-[0.15em] text-[var(--green)]">
-          <span className="h-0.5 w-6 rounded-full bg-[var(--green)]" /> Preguntas frecuentes
+          <span className="h-0.5 w-6 rounded-full bg-[var(--green)]" />{" "}
+          Preguntas frecuentes
         </div>
         <h2 className="mb-3 font-[var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-black uppercase leading-[1.05] text-[var(--text)]">
           Las dudas más comunes
@@ -20,7 +21,10 @@ export default function FAQ() {
 
         <div className="space-y-3">
           {faqs.map((f, i) => (
-            <div key={i} className="overflow-hidden rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)]">
+            <div
+              key={i}
+              className="overflow-hidden rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)]"
+            >
               <button
                 className="w-full px-6 py-5 text-left text-[var(--text)] font-semibold transition-colors duration-200 flex items-center justify-between gap-4 hover:text-[var(--green)]"
                 onClick={() => {
@@ -32,7 +36,11 @@ export default function FAQ() {
                 }}
               >
                 {f.q}
-                {open.includes(i) ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                {open.includes(i) ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
               </button>
               {open.includes(i) && (
                 <div className="px-6 pb-5 text-sm leading-7 text-[var(--muted)]">

@@ -49,7 +49,8 @@ export default function Services() {
     <section id="servicios" className="bg-[var(--bg)] px-6 py-20">
       <div className="mx-auto max-w-[1100px]">
         <div className="mb-3 inline-flex items-center gap-2 font-[var(--font-display)] text-[0.8rem] font-bold uppercase tracking-[0.15em] text-[var(--green)]">
-          <span className="h-0.5 w-6 rounded-full bg-[var(--green)]" /> Servicios
+          <span className="h-0.5 w-6 rounded-full bg-[var(--green)]" />{" "}
+          Servicios
         </div>
         <h2 className="mb-3 font-[var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-black uppercase leading-[1.05] text-[var(--text)]">
           ¿Qué necesitás reparar?
@@ -72,7 +73,10 @@ export default function Services() {
               </div>
               <ul className="mb-6 space-y-2">
                 {s.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-[var(--muted)]">
+                  <li
+                    key={item}
+                    className="flex items-center gap-2 text-sm text-[var(--muted)]"
+                  >
                     <span className="block h-2 w-2 rounded-full bg-[var(--green)]" />
                     {item}
                   </li>

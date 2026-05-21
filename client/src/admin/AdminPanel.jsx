@@ -89,7 +89,12 @@ export default function AdminPanel({ onLogout }) {
             Esta imagen aparece en la sección "Ofertas vigentes" del sitio.
           </p>
           <div className="mb-6 text-sm text-[var(--muted)]">
-            Relación de aspecto requerida: <strong className="text-[var(--text)]">16:5 (panorámica horizontal)</strong> — por ejemplo, 1600 × 500 px o 3200 × 1000 px. Podés crear tu banner en Canva con esas medidas.
+            Relación de aspecto requerida:{" "}
+            <strong className="text-[var(--text)]">
+              16:5 (panorámica horizontal)
+            </strong>{" "}
+            — por ejemplo, 1600 × 500 px o 3200 × 1000 px. Podés crear tu banner
+            en Canva con esas medidas.
           </div>
 
           <div
@@ -121,29 +126,46 @@ export default function AdminPanel({ onLogout }) {
 
           {preview && (
             <div className="mt-6 overflow-hidden rounded-[1rem] border border-[var(--border)]">
-              <img src={preview} alt="Vista previa del banner" className="h-full w-full object-cover" />
+              <img
+                src={preview}
+                alt="Vista previa del banner"
+                className="h-full w-full object-cover"
+              />
             </div>
           )}
 
           <div className="mt-6 flex flex-wrap gap-3">
             {preview && (
-              <button className="inline-flex items-center gap-2 rounded-[0.75rem] border border-[var(--border)] px-4 py-3 text-sm font-semibold text-[var(--text)] transition duration-200 hover:border-[var(--green)]" onClick={clear} type="button">
+              <button
+                className="inline-flex items-center gap-2 rounded-[0.75rem] border border-[var(--border)] px-4 py-3 text-sm font-semibold text-[var(--text)] transition duration-200 hover:border-[var(--green)]"
+                onClick={clear}
+                type="button"
+              >
                 Limpiar
               </button>
             )}
-            <button className="inline-flex items-center gap-2 rounded-[0.75rem] bg-[var(--green)] px-4 py-3 text-sm font-[var(--font-display)] font-extrabold uppercase tracking-[0.05em] text-black transition duration-200 hover:bg-[var(--green-bright)]" onClick={save} type="button">
+            <button
+              className="inline-flex items-center gap-2 rounded-[0.75rem] bg-[var(--green)] px-4 py-3 text-sm font-[var(--font-display)] font-extrabold uppercase tracking-[0.05em] text-black transition duration-200 hover:bg-[var(--green-bright)]"
+              onClick={save}
+              type="button"
+            >
               <Icon d={icons.checkCircle} size={16} /> Publicar banner
             </button>
           </div>
 
           {saved && (
             <div className="mt-6 inline-flex items-center gap-2 rounded-[0.75rem] border border-[var(--border-green)] bg-[rgba(34,197,94,0.1)] px-4 py-3 text-sm text-[var(--green)]">
-              <Icon d={icons.checkCircle} size={16} /> Banner publicado correctamente en el sitio.
+              <Icon d={icons.checkCircle} size={16} /> Banner publicado
+              correctamente en el sitio.
             </div>
           )}
 
           <div className="mt-6 rounded-[0.75rem] border border-[var(--border-green)] bg-[rgba(34,197,94,0.05)] p-4 text-sm leading-7 text-[var(--muted)]">
-            <strong className="text-[var(--green-bright)]">Consejo:</strong> Diseñá el banner en Canva con tamaño 1600 × 500 px. Guardalo como PNG o JPG. Nombralo con palabras clave como <em>gsmfix-promo-pantalla-agosto.jpg</em> para mejor SEO. La sesión se guarda localmente en este navegador.
+            <strong className="text-[var(--green-bright)]">Consejo:</strong>{" "}
+            Diseñá el banner en Canva con tamaño 1600 × 500 px. Guardalo como
+            PNG o JPG. Nombralo con palabras clave como{" "}
+            <em>gsmfix-promo-pantalla-agosto.jpg</em> para mejor SEO. La sesión
+            se guarda localmente en este navegador.
           </div>
         </div>
       </div>
