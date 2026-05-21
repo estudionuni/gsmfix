@@ -1,15 +1,17 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import WhyUs from "./components/WhyUs";
-import PromoBanner from "./components/PromoBanner";
-import FAQ from "./components/FAQ";
-import Reviews from "./components/Reviews";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import { useState } from "react";
+import Navbar from "./Navbar";
+import Hero from "./Hero";
+import Services from "./Services";
+import WhyUs from "./WhyUs";
+import PromoBanner from "./PromoBanner";
+import FAQ from "./FAQ";
+import Reviews from "./Reviews";
+import Contact from "./Contact";
+import Footer from "./Footer";
 
 export default function Landing() {
   const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div>
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />

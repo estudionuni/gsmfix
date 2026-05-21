@@ -1,25 +1,25 @@
-// src/components/WhyUs.jsx
 import { Award, Shield, Zap, CheckCircle2 } from "lucide-react";
+import { Icon } from "../lib/icons";
 
 export default function WhyUs() {
   const items = [
     {
-      icon: Award,
+      IconComponent: Award,
       title: "10 años de experiencia",
       text: "Una década atendiendo a vecinos de Luis Guillón y alrededores. Conocemos cada marca y modelo.",
     },
     {
-      icon: Shield,
+      IconComponent: Shield,
       title: "Garantía en todo",
       text: "Todos nuestros trabajos tienen garantía. Si algo no queda bien, lo resolvemos sin vueltas.",
     },
     {
-      icon: Zap,
+      IconComponent: Zap,
       title: "Reparaciones rápidas",
       text: "La mayoría de las reparaciones se resuelven el mismo día. Valoramos tu tiempo.",
     },
     {
-      icon: CheckCircle2,
+      IconComponent: CheckCircle2,
       title: "Repuestos de calidad",
       text: "Usamos repuestos seleccionados para que tu equipo funcione como nuevo por mucho tiempo.",
     },
@@ -46,14 +46,14 @@ export default function WhyUs() {
           barrio.
         </p>
         <div className="why-grid">
-          {items.map((i) => (
-            <div key={i.title} className="why-card">
+          {items.map((item) => (
+            <div key={item.title} className="why-card">
               <div className="why-icon">
-                <i.IconComponent size={22} />
+                <item.IconComponent size={22} />
               </div>
               <div>
-                <div className="why-title">{i.title}</div>
-                <div className="why-text">{i.text}</div>
+                <div className="why-title">{item.title}</div>
+                <div className="why-text">{item.text}</div>
               </div>
             </div>
           ))}

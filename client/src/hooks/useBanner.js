@@ -1,7 +1,17 @@
-// src/hooks/useBanner.js
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-let _bannerUrl = null;
+const STORAGE_KEY = "gsmfix-banner-url";
+
+function readStoredBanner() {
+  if (typeof window === "undefined") return null;
+  try {
+    return window.localStorage.getItem(STORAGE_KEY) || null;
+  } catch {
+    return null;
+  }
+}
+
+let _bannerUrl = readStoredBanner();
 const listeners = new Set();
 
 export function useBanner() {
@@ -12,9 +22,17 @@ export function useBanner() {
     return () => listeners.delete(setUrl);
   }, []);
 
-  const setBanner = (url) => {
-    _bannerUrl = url;
-    listeners.forEach((fn) => fn(url));
+  const setBanner = (nextUrl) => {
+    _bannerUrl = nextUrl;
+    try {
+      if (typeof window !== "undefined") {
+        if (nextUrl) window.localStorage.setItem(STORAGE_KEY, nextUrl);
+        else window.localStorage.removeItem(STORAGE_KEY);
+      }
+    } catch {
+      // ignore storage errors
+    }
+    listeners.forEach((fn) => fn(nextUrl));
   };
 
   return [url, setBanner];

@@ -1,6 +1,5 @@
-// src/components/Contact.jsx
-import { MapPin, Clock } from "lucide-react";
 import { WhatsAppIcon, InstagramIcon } from "../lib/brandIcons";
+import { Icon, icons } from "../lib/icons";
 import { waLink } from "../lib/whatsapp";
 
 export default function Contact() {

@@ -1,12 +1,11 @@
-// src/components/Services.jsx
 import { Smartphone, Monitor, Gamepad2 } from "lucide-react";
-import { WhatsAppIcon } from "../lib/brandIcons";
+import { Icon, icons } from "../lib/icons";
 import { waLink } from "../lib/whatsapp";
 
 export default function Services() {
   const services = [
     {
-      icon: Smartphone,
+      IconComponent: Smartphone,
       name: "Celulares",
       items: [
         "Cambio de pantalla",
@@ -19,7 +18,7 @@ export default function Services() {
       msg: "Hola GSMFix! Quiero consultar sobre la reparación de mi celular.",
     },
     {
-      icon: Monitor,
+      IconComponent: Monitor,
       name: "Computadoras",
       items: [
         "Diagnóstico completo",
@@ -32,7 +31,7 @@ export default function Services() {
       msg: "Hola GSMFix! Quiero consultar sobre la reparación de mi computadora.",
     },
     {
-      icon: Gamepad2,
+      IconComponent: Gamepad2,
       name: "Consolas",
       items: [
         "PlayStation 3 y 4",
@@ -62,8 +61,8 @@ export default function Services() {
               </div>
               <div className="service-name">{s.name}</div>
               <ul className="service-list">
-                {s.items.map((i) => (
-                  <li key={i}>{i}</li>
+                {s.items.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
               <a
