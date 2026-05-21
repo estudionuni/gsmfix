@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronLeft } from "lucide-react";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Services from "./Services";
@@ -8,23 +9,28 @@ import FAQ from "./FAQ";
 import Reviews from "./Reviews";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import ScrollToTop from "./ScrollToTop";
 
 export default function Landing() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div>
-      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <div style={{ paddingTop: 64 }}>
-        <Hero />
-        <Services />
-        <WhyUs />
-        <PromoBanner />
-        <FAQ />
-        <Reviews />
-        <Contact />
-        <Footer />
+    <>
+      <div>
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <div style={{ paddingTop: 64 }}>
+          <Hero />
+          <Services />
+          <WhyUs />
+          <PromoBanner />
+          <FAQ />
+          <Reviews />
+          <Contact />
+          <Footer />
+        </div>
       </div>
-    </div>
+      {/* ── SCROLL TO TOP ── */}
+      <ScrollToTop />
+    </>
   );
 }
