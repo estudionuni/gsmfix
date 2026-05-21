@@ -1,5 +1,6 @@
+// src/components/Services.jsx
 import { Smartphone, Monitor, Gamepad2 } from "lucide-react";
-import { Icon, icons } from "../lib/icons";
+import { WhatsAppIcon } from "../lib/brandIcons";
 import { waLink } from "../lib/whatsapp";
 
 export default function Services() {
@@ -49,8 +50,7 @@ export default function Services() {
     <section id="servicios" className="bg-[var(--bg)] px-6 py-20">
       <div className="mx-auto max-w-[1100px]">
         <div className="mb-3 inline-flex items-center gap-2 font-[var(--font-display)] text-[0.8rem] font-bold uppercase tracking-[0.15em] text-[var(--green)]">
-          <span className="h-0.5 w-6 rounded-full bg-[var(--green)]" />{" "}
-          Servicios
+          <span className="h-0.5 w-6 rounded-full bg-[var(--green)]" /> Servicios
         </div>
         <h2 className="mb-3 font-[var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-black uppercase leading-[1.05] text-[var(--text)]">
           ¿Qué necesitás reparar?
@@ -77,7 +77,7 @@ export default function Services() {
                     key={item}
                     className="flex items-center gap-2 text-sm text-[var(--muted)]"
                   >
-                    <span className="block h-2 w-2 rounded-full bg-[var(--green)]" />
+                    <span className="block h-2 w-2 flex-shrink-0 rounded-full bg-[var(--green)]" />
                     {item}
                   </li>
                 ))}
@@ -86,9 +86,9 @@ export default function Services() {
                 href={waLink(s.msg)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-green)] bg-[rgba(34,197,94,0.1)] px-4 py-3 text-sm font-bold uppercase tracking-[0.04em] text-[var(--green)] transition duration-200 hover:bg-[rgba(34,197,94,0.2)]"
+                className="inline-flex items-center gap-2 rounded-xl border border-[var(--border-green)] bg-[rgba(34,197,94,0.1)] px-4 py-3 text-sm font-bold uppercase tracking-[0.04em] text-[var(--green)] transition duration-200 hover:bg-[rgba(34,197,94,0.2)] hover:border-[var(--green)]"
               >
-                <Icon d={icons.whatsapp} size={16} /> Consultar
+                <WhatsAppIcon size={16} /> Consultar
               </a>
             </div>
           ))}

@@ -1,5 +1,6 @@
+// src/components/Contact.jsx
+import { MapPin, Clock } from "lucide-react";
 import { WhatsAppIcon, InstagramIcon } from "../lib/brandIcons";
-import { Icon, icons } from "../lib/icons";
 import { waLink } from "../lib/whatsapp";
 
 export default function Contact() {
@@ -15,8 +16,8 @@ export default function Contact() {
         <div className="grid gap-12 xl:grid-cols-[1fr_1fr]">
           <div className="flex flex-col gap-6">
             <div className="flex gap-4">
-              <div className="mt-1 text-[var(--green)]">
-                <Icon d={icons.mapPin} size={20} />
+              <div className="mt-1 flex-shrink-0 text-[var(--green)]">
+                <MapPin size={20} />
               </div>
               <div>
                 <div className="mb-1 text-[0.7rem] uppercase tracking-[0.08em] text-[var(--muted)]">
@@ -31,8 +32,8 @@ export default function Contact() {
             </div>
 
             <div className="flex gap-4">
-              <div className="mt-1 text-[var(--green)]">
-                <Icon d={icons.clock} size={20} />
+              <div className="mt-1 flex-shrink-0 text-[var(--green)]">
+                <Clock size={20} />
               </div>
               <div>
                 <div className="mb-1 text-[0.7rem] uppercase tracking-[0.08em] text-[var(--muted)]">
@@ -45,8 +46,8 @@ export default function Contact() {
             </div>
 
             <div className="flex gap-4">
-              <div className="mt-1 text-[var(--green)]">
-                <Icon d={icons.whatsapp} size={20} />
+              <div className="mt-1 flex-shrink-0 text-[var(--green)]">
+                <WhatsAppIcon size={20} />
               </div>
               <div>
                 <div className="mb-1 text-[0.7rem] uppercase tracking-[0.08em] text-[var(--muted)]">
@@ -65,7 +66,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 text-sm font-semibold text-[var(--text)] transition duration-200 hover:border-[var(--green)] hover:text-[var(--green)]"
               >
-                <Icon d={icons.whatsapp} size={16} /> WhatsApp
+                <WhatsAppIcon size={16} /> WhatsApp
               </a>
               <a
                 href="https://www.instagram.com/gsmfixok"
@@ -73,11 +74,11 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 text-sm font-semibold text-[var(--text)] transition duration-200 hover:border-[var(--green)] hover:text-[var(--green)]"
               >
-                <Icon d={icons.instagram} size={16} /> Instagram
+                <InstagramIcon size={16} /> Instagram
               </a>
             </div>
 
-            <div className="mt-6">
+            <div>
               <a
                 href={waLink("Hola GSMFix! Quiero hacer una consulta.")}
                 target="_blank"
@@ -89,9 +90,9 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="rounded-[1rem] border border-[var(--border)] overflow-hidden bg-[var(--bg-card)] aspect-[16/9]">
+          <div className="overflow-hidden rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)] aspect-[16/9]">
             <iframe
-              className="h-full w-full"
+              className="h-full w-full border-0 block"
               title="GSMFix ubicación"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.8!2d-58.4383!3d-34.8089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQ4JzMyLjAiUyA1OMKwMjYnMTcuOSJX!5e0!3m2!1ses!2sar!4v1700000000000"
               allowFullScreen=""

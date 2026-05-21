@@ -1,5 +1,6 @@
+// src/admin/AdminLogin.jsx
 import { useState } from "react";
-import { Icon, icons } from "../lib/icons";
+import { Lock } from "lucide-react";
 import { navigate } from "../hooks/useRouter";
 
 const ADMIN_PASS = "casa1234";
@@ -13,7 +14,6 @@ export default function AdminLogin({ onLogin }) {
       onLogin();
       return;
     }
-
     setErr(true);
     window.setTimeout(() => setErr(false), 2500);
   };
@@ -23,7 +23,7 @@ export default function AdminLogin({ onLogin }) {
       <div className="w-full max-w-[480px] rounded-[1rem] border border-[var(--border)] bg-[var(--bg-card)] p-10">
         <div className="mb-7 flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-[0.75rem] bg-[rgba(34,197,94,0.1)] text-[var(--green)]">
-            <Icon d={icons.lock} size={22} />
+            <Lock size={22} />
           </div>
           <div>
             <div className="text-2xl font-[var(--font-display)] font-black uppercase text-[var(--text)]">
