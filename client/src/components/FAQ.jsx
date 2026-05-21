@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { faqs } from "../data/faqs";
 
 export default function FAQ() {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState([]);
   return (
     <section id="preguntas">
       <div className="section-inner">
@@ -18,16 +18,22 @@ export default function FAQ() {
             <div key={i} className="faq-item">
               <button
                 className="faq-q"
-                onClick={() => setOpen(open === i ? null : i)}
+                onClick={() => {
+                  setOpen(
+                    open.includes(i)
+                      ? open.filter((index) => index !== i) // Si ya estaba abierto, lo saca del array
+                      : [...open, i], // Si estaba cerrado, lo agrega al array
+                  );
+                }}
               >
                 {f.q}
-                {open === i ? (
+                {open.includes(i) ? (
                   <ChevronUp size={18} />
                 ) : (
                   <ChevronDown size={18} />
                 )}
               </button>
-              {open === i && <div className="faq-a">{f.a}</div>}
+              {open.includes(i) && <div className="faq-a">{f.a}</div>}
             </div>
           ))}
         </div>
