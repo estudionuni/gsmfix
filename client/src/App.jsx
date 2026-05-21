@@ -1,17 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { faqs } from "../data/faqs";
-import { reviews } from "../data/reviews";
-import { WhatsAppIcon } from "../src/lib/brandIcons";
-
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import WhyUs from "./components/WhyUs";
-import PromoBanner from "./components/PromoBanner";
-import FAQ from "./components/FAQ";
-import Reviews from "./components/Reviews";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import { faqs } from "./data/faqs";
+import { reviews } from "./data/reviews";
+import { WhatsAppIcon } from "./src/lib/brandIcons";
 
 // ─── WHATSAPP CTA ─────────────────────────────────────────────────────────────
 const WA_NUMBER = "5491153258828";
@@ -229,25 +219,6 @@ const css = `
 //Navbar
 
 // Services
-
-function Landing() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  return (
-    <div>
-      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <div style={{ paddingTop: 64 }}>
-        <Hero />
-        <Services />
-        <WhyUs />
-        <PromoBanner />
-        <FAQ />
-        <Reviews />
-        <Contact />
-        <Footer />
-      </div>
-    </div>
-  );
-}
 
 // ─── ADMIN LOGIN ──────────────────────────────────────────────────────────────
 const ADMIN_PASS = "casa1234";
